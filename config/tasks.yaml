@@ -1,0 +1,66 @@
+market_content_research_task:
+  description: >
+    Research and gather content on the {industry} from the web, including articles, market reports, and insights.
+    Focus on aligning the collected information with the company's goals and initiatives.
+    Research and collect competitor annual reports and links to reports
+    Share the extracted resource titles and contents with the Market Researcher.
+  expected_output: >
+    a dictionary with resource titles as keys and webpage/article/document content text as values
+    a dictionary with competitor titles as keys and annual report links as values
+  agent: market_content_researcher
+
+
+market_research_task:
+  description: >
+    Analyze the content provided by the Market Content Researcher to generate a detailed summary of the {industry}.
+    Include insights on {industry} trends, key offerings, and strategic focus areas of the {company}.
+  expected_output: >
+    A detailed markdown report summarizing the {industry}, {company}'s offerings and its strategic focus with a list of competitor annual reports and their links at the end of the report.
+  agent: market_researcher
+
+
+genai_content_research_task:
+  description: >
+    Research and gather web content, including articles, market reports, and insights, focused on Generative AI, Machine Learning, and Automation applications in the {industry}.
+    Share the extracted resource titles and contents with the Genai Researcher.
+    Share the extracted resource links and titles with the Resource Collector.
+  expected_output: >
+    a dictionary with resource titles as keys and webpage/article/document content text as values to be used by the Gen Ai Researcher
+    a dictionary with resource titles as keys and resource links as values to be used by the Resource collector
+  agent: genai_content_researcher
+
+
+resource_collection_task:
+  description: >
+    Consolidate resource links provided by the GenAI Content Researcher into a detailed structured list.
+    Each entry should include the title, a brief summary and link of the resource for easy reference.
+  expected_output: >
+    A markdown file of a formatted lists with clickable links:
+    A list of GenAI-focused resources (titles, short summary and links)
+  agent: resource_collector
+
+
+genai_research_task:
+  description: >
+    Generate a comprehensive list of 20 brand new use cases for Generative AI and Machine Learning solutions in the company's workflow.
+    Each use case should include a description, a short summary of the system's structure, and key impact points for the {company}s operations.
+    share a list of the generated use cases with dataset researcher
+  expected_output: >
+    A markdown document with a detailed list of use cases, each containing:
+    A description of use case
+    A short system structure summary
+    Key impact points across different operations of the company
+  agent: genai_researcher
+
+
+dataset_research_task:
+  description: >
+    Analyze the generated use cases provided by the GenAI Researcher and search the web to curate a list of public datasets and repositories that can be used for their implementation.
+    Focus on identifying datasets from platforms such as Kaggle, Hugging Face, and other public repositories from Github that align with the requirements of each use case.
+    Ensure that each dataset is relevant, well-documented, and practical for the intended application.
+  expected_output: >
+    A markdown file containing a formatted list with clickable links:
+    Each entry should include the use case title, a brief summary and 2-3 links of the relevant datasets for easy reference.
+  agent: dataset_researcher
+
+
