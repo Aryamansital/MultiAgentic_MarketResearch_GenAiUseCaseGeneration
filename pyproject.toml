@@ -1,0 +1,14 @@
+[project]
+name = "multiagent"
+version = "0.1.0"
+description = "MultiAgent market research and AI usecase generation using crewAI"
+authors = [{ name = "Aryaman Sital", email = "aryamansital@gmail.com" }]
+requires-python = ">=3.10,<=3.13"
+dependencies = [
+    "crewai[tools]>=0.86.0,<1.0.0"
+    "exa_py>=1.5.0"
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

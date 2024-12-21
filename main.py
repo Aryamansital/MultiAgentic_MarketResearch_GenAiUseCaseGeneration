@@ -115,8 +115,10 @@ class Multiagent():
 			output_log_file="logs.txt"
 		)
 
-inputs = {
+
+if __name__ == "__main__":
+	inputs = {
         "company":"Maruti Suzuki",
         "industry":"Automotive Manufacturing"
     }
-result = Multiagent().crew().kickoff(inputs=inputs)
+	result = Multiagent().crew().kickoff(inputs=inputs)
